@@ -5,11 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
-djangorestframework = "*"
-requests = "*"
-psycopg = "*"
+python-string-utils = "==0.4.0"
 
 [dev-packages]
+pylint = "*"
 
 [requires]
-python_version = "3.10"
+python_version = "3.11"

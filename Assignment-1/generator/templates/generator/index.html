@@ -1,0 +1,56 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<div class="heading">
+<h1 class="main-heading">Please select the character and their length to generate your Password</h1>
+<h2 class="warning">NOTE : Your password should be atleast 12 chars long and could be atmost 38 chars </h2>
+</div>
+<form class="form" action="{% url 'password' %}">
+    {% csrf_token %}
+    <br>
+    <select class="options" name="uppercase_length" id="uppercase_length">
+        <option value="6">6 char long</option>
+        <option value="7">7 char long</option>
+        <option value="8">8 char long</option>
+        <option value="9">9 char long</option>
+        <option value="10">10 char long</option>
+        <option value="11">11 char long</option>
+        <option value="12">12 char long</option>
+        <input  class="largerCheckbox" type="checkbox" name="uppercase">Uppercase
+        </select>
+        </div>
+    <br>
+    <br>
+    <select name="lowercase_length" id="lowercase_length">
+        <option value="6">6 char long</option>
+        <option value="7">7 char long</option>
+        <option value="8">8 char long</option>
+        <option value="9">9 char long</option>
+        <option value="10">10 char long</option>
+        <option value="11">11 char long</option>
+        <option value="12">12 char long</option>
+        <input  class="largerCheckbox" type="checkbox" name="lowercase">Lowercase
+    </select>
+    <br>
+    <br>
+    <select name="numbers_length" id="numbers_length">
+        <option value="4">4 chars</option>
+        <option value="5">5 chars</option>
+        <option value="6">6 chars</option>
+        <option value="7">7 chars</option>
+        <option value="8">8 chars</option>
+        <input  class="largerCheckbox" type="checkbox" name="numbers">Numbers
+        </select>
+    <br>
+    <br>
+    <select name="specialchar_length" id="specialchar_length">
+        <option value="2">2 chars</option>
+        <option value="3">3 chars</option>
+        <option value="4">4 chars</option>
+        <option value="5">5 chars</option>
+        <option value="6">6 chars</option>
+        <input type="checkbox" name="specialchars" class="largerCheckbox">Special Characters
+        </select>
+    <br>
+    <input class="button" type="submit" value="generate password">
+
+</form>

@@ -1,0 +1,58 @@
+.heading {
+  margin: auto;
+  width: 50%;
+  padding: 2rem;
+}
+
+.main-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #ff1b68;
+}
+
+.warning {
+  text-align: center;
+  color: #cc1653;
+}
+
+.form {
+  margin: auto;
+  width: 50%;
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+#uppercase_length {
+  width: 8rem;
+  font-size: 1.6rem;
+}
+
+#lowercase_length {
+  width: 8rem;
+  font-size: 1.6rem;
+}
+
+#numbers_length {
+  width: 8rem;
+  font-size: 1.6rem;
+}
+
+#specialchar_length {
+  width: 8rem;
+  font-size: 1.6rem;
+}
+
+input.largerCheckbox {
+            width: 1.5rem;
+            height: 1.5rem;
+}
+
+.button{
+    background-color: #ff1b68;
+    margin: 2rem;
+    padding: 10px;
+    font-size: 1.8rem;
+    border-radius: 12px;
+    color: antiquewhite;
+}
