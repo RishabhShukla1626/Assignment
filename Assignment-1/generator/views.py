@@ -8,14 +8,13 @@ def generator(request):
     return render(request, 'generator/index.html')
 
 def password(request):
+    
     password = ''
     length = 0
     lower_case = list('abcdefghijklmnopqrstuvwxyz')
     upper_case = list('abcdefghijklmnopqrstuvwxyz'.upper())
     number = list('1234567890')
     special_chars = list('!@#$%^&*()_+?<>\|')
-    # import pdb; pdb.set_trace()
-    # print(request.GET)
 
     if request.GET.get('uppercase'):
         uppercase_length = int(request.GET.get('uppercase_length'))
@@ -28,17 +27,19 @@ def password(request):
         length += lower_length
         for char in range(lower_length):    
             password += random.choice(lower_case)
+
     if request.GET.get('numbers'):
         numbers_length = int(request.GET.get('numbers_length')[0])
         length += numbers_length
         for char in range(numbers_length):    
             password += random.choice(number)
+
     if request.GET.get('specialchars'):
         specialchar_length = int(request.GET.get('specialchar_length')[0])
         length += specialchar_length
         for char in range(specialchar_length):    
             password += random.choice(special_chars)
-    # import pdb; pdb.set_trace()
+
     if length > 11 and length < 39:
         password = string_utils.shuffle(password)
         return render(request, 'generator/password.html', {"password": password})
