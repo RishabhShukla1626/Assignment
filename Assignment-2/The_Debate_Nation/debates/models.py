@@ -18,22 +18,6 @@ class Debates(models.Model):
         return str(self.debate_title)
 
 
-class Reviews(models.Model):
-    VOTE_TYPE = (("up", "Up Vote"), ("down", "Down Vote"))
-    # owner =
-    debate = models.ForeignKey(Debates, on_delete=models.CASCADE)
-    body = models.TextField(null=True, blank=True)
-    value = models.CharField(max_length=200, choices=VOTE_TYPE)
-    created = models.DateTimeField(auto_now_add=True)
-    id = models.UUIDField(
-        default=uuid.uuid4, unique=True, primary_key=True, editable=False
-    )
-    # comments = models.ManyToManyField(Debate)
-
-    def __str__(self):
-        return str(self.value)
-
-
 class Arguments(models.Model):
     debate = models.ForeignKey('Debates', on_delete=models.CASCADE)
     #author =
