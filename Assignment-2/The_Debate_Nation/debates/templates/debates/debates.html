@@ -1,0 +1,21 @@
+{% include 'navbar.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+<h1>welcome to the Debate Nation</h1>
+<h2>Trending Debate topics</h2>
+    {% for debate in debates %}
+        <h2>{{ debate.debate_title }}</h2>
+    
+        <h3>{{ debate.description }}</h3> 
+        <h6>
+            {% for argument in debate.arguments_set.all %}
+            <h6>{{ argument.argument}}</h6>
+            {% endfor %}
+        </h6>
+        <a href="{% url 'argue' debate.id %}">Argue</a>
+        <a href="">delete</a>
+        <a href="">close</a>
+    {% endfor %}
+{% endblock content %}

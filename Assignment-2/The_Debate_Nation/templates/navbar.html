@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="{% url 'logoutuser' %}">
+    {% if user.is_authenticated %}
+        logged in as {{ user.username }}
+    {% endif %}
+  </a>
+  <a href="#">Logout</a>
+  <input type="text" placeholder="Search..">
+</div>

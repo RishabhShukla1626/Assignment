@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 django = "*"
 python-string-utils = "==0.4.0"
+djangorestframework = "*"
+pillow = "*"
+uuid = "*"
 
 [dev-packages]
 pylint = "*"
